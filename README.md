@@ -6,6 +6,11 @@ Leonardo is a simple, fast desktop utility for converting video formats into fil
 It provides an easy graphical interface to **FFmpeg**, so you can prepare footage without memorizing command-line syntax.
 
 ---
+## 🎥 Video Demonstrations
+
+- **Full Demonstration:** [Watch on YouTube](https://youtu.be/EcrWtsoLaY8)
+- **59-Second Overview:** [Watch the Short](https://www.youtube.com/shorts/SvsJmhlpx9Q?feature=share)
+
 
 ## 📥 Download Precompiled Binary
 
