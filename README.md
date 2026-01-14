@@ -1,9 +1,10 @@
 # 🎬 Leonardo — FFmpeg Video Converter for DaVinci Resolve (Linux)
 
-[![Download](https://img.shields.io/badge/Download-Leonardo-blue?style=for-the-badge)](https://bytesbreadbbq.com/track_download.php?file=2025/11/leonardo.zip)
+[![Download][(https://img.shields.io/badge/Download-Leonardo-blue?style=for-the-badge)](https://bytesbreadbbq.com/track_download.php?file=2025/11/leonardo.zip)](https://bytesbreadbbq.com/wp-content/uploads/2025/12/Leonardo9.zip)
 
 Leonardo is a simple, fast desktop utility for converting video formats into files that work smoothly inside **DaVinci Resolve on Linux**.  
 It provides an easy graphical interface to **FFmpeg**, so you can prepare footage without memorizing command-line syntax.
+Leonardo in this updated version does bidirectional conversion MP4 to MOV and back to MP4!  
 
 ---
 ## 🎥 Video Demonstrations
