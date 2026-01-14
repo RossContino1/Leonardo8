@@ -14,10 +14,28 @@ import (
 
 func main() {
 	a := app.New()
-	w := a.NewWindow("FFmpeg Converter")
+	w := a.NewWindow("Leonardo v9")
 
 	var inputPath, outputPath string
-	logLabel := widget.NewLabel("Select input and output files to begin.")
+	conversionMode := "mp4_to_mov" // default
+
+	logLabel := widget.NewLabel("Select input, output, and conversion type.")
+
+	// --- Conversion Mode ---
+	modeSelector := widget.NewRadioGroup(
+		[]string{
+			"Convert MP4 → MOV (DaVinci Resolve)",
+			"Convert MOV → MP4",
+		},
+		func(value string) {
+			if value == "Convert MOV → MP4" {
+				conversionMode = "mov_to_mp4"
+			} else {
+				conversionMode = "mp4_to_mov"
+			}
+		},
+	)
+	modeSelector.SetSelected("Convert MP4 → MOV (DaVinci Resolve)")
 
 	// --- Input File Selection ---
 	inputBtn := widget.NewButton("Select Input File", func() {
@@ -56,13 +74,12 @@ func main() {
 			return
 		}
 
-		// Optional safety: check if output file already exists
 		if _, err := os.Stat(outputPath); err == nil {
 			confirm := dialog.NewConfirm("File Exists",
-				fmt.Sprintf("The file '%s' already exists.\nDo you want to overwrite it?", outputPath),
+				fmt.Sprintf("The file '%s' already exists.\nOverwrite?", outputPath),
 				func(ok bool) {
 					if ok {
-						runFFmpeg(a, w, inputPath, outputPath, logLabel)
+						runFFmpeg(a, w, inputPath, outputPath, conversionMode, logLabel)
 					} else {
 						logLabel.SetText("Conversion canceled.")
 					}
@@ -71,39 +88,50 @@ func main() {
 			return
 		}
 
-		// Run ffmpeg directly if file doesn't exist
-		runFFmpeg(a, w, inputPath, outputPath, logLabel)
+		runFFmpeg(a, w, inputPath, outputPath, conversionMode, logLabel)
 	})
 
-	// --- Layout ---
 	w.SetContent(container.NewVBox(
-		widget.NewLabel("🎞️ Leonardo v8 (Go Based)"),
+		widget.NewLabel("Leonardo v9 (Go Based)"),
+		modeSelector,
 		inputBtn,
 		outputBtn,
 		convertBtn,
 		logLabel,
 	))
 
-	w.Resize(fyne.NewSize(420, 250))
+	w.Resize(fyne.NewSize(450, 320))
 	w.ShowAndRun()
 }
 
-// --- Helper function to run ffmpeg safely ---
-func runFFmpeg(a fyne.App, w fyne.Window, inputPath, outputPath string, logLabel *widget.Label) {
+// ----------------------------------------
+// runFFmpeg chooses the command dynamically
+// ----------------------------------------
+func runFFmpeg(a fyne.App, w fyne.Window, inputPath, outputPath, mode string, logLabel *widget.Label) {
 	logLabel.SetText("Running ffmpeg... please wait.")
 
 	go func() {
-		// Use -y to overwrite existing files automatically
-		cmd := exec.Command("ffmpeg",
-			"-y", // <— overwrite existing files without prompt
-			"-i", inputPath,
-			"-vcodec", "mjpeg",
-			"-q:v", "2",
-			"-acodec", "pcm_s16be",
-			"-q:a", "0",
-			"-f", "mov",
-			outputPath,
-		)
+		var cmd *exec.Cmd
+
+		if mode == "mp4_to_mov" {
+			cmd = exec.Command("ffmpeg",
+				"-y",
+				"-i", inputPath,
+				"-vcodec", "mjpeg",
+				"-q:v", "2",
+				"-acodec", "pcm_s16be",
+				"-q:a", "0",
+				"-f", "mov",
+				outputPath,
+			)
+		} else {
+			// MOV → MP4
+			cmd = exec.Command("ffmpeg",
+				"-y",
+				"-i", inputPath,
+				outputPath,
+			)
+		}
 
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
@@ -122,6 +150,6 @@ func runFFmpeg(a fyne.App, w fyne.Window, inputPath, outputPath string, logLabel
 			Title:   "Conversion Complete",
 			Content: fmt.Sprintf("Saved to %s", outputPath),
 		})
-		logLabel.SetText("✅ Conversion complete!")
+		logLabel.SetText("Conversion complete.")
 	}()
 }
