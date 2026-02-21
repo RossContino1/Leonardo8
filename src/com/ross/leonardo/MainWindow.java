@@ -263,7 +263,7 @@ public class MainWindow extends JFrame {
 
         JMenuItem githubItem = new JMenuItem("GitHub Repository");
         githubItem.addActionListener(e ->
-                openWebsite("https://github.com/YOUR_USERNAME/leonardo")
+                openWebsite("https://github.com/RossContino1/Leonardo")
         );
 
         JMenuItem aboutItem = new JMenuItem("About");
