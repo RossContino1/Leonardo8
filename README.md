@@ -7,7 +7,7 @@ Leonardo is a Linux media conversion tool built in Java with a focus on simplici
 * Audio and video conversion
 * Clean desktop interface
 * Linux AppImage distribution (no install required)
-* Cross-platform (Linux, Windows, macOS planned)
+* Cross-platform (Linux, Windows planned, macOS planned)
 
 ## Requirements
 
