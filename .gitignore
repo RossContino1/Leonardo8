@@ -1,0 +1,25 @@
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+
+# Java build output
+*.class
+target/
+build/
+out/
+
+# Packaging / build folders
+dist/
+jpkg/
+LeonardoBuild/
+input/
+output/
+*.AppImage
+*.jar
+
+# OS junk
+.DS_Store
+Thumbs.db

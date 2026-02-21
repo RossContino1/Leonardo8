@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Leonardo 10 - OBS Remux</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; line-height: 1.5; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 14px 0; }
+    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
+    ul, ol { margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <h1>OBS Remux</h1>
+
+  <div class="card">
+    <h2>What this mode does</h2>
+    <p><b>Remux</b> changes the <b>container</b> without re-encoding video/audio. That means it is usually <b>very fast</b> and does not reduce quality.</p>
+    <p>Common use: <b>MKV → MP4</b> for upload or editing compatibility.</p>
+  </div>
+
+  <div class="card">
+    <h2>When to use it</h2>
+    <ul>
+      <li>You recorded in <b>MKV</b> (recommended for safety) and now need an <b>MP4</b> for upload.</li>
+      <li>Your editor/site prefers MP4 but you don’t want to re-encode.</li>
+      <li>You want a quick “container swap” for compatibility.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>How to use it</h2>
+    <ol>
+      <li>Select <b>OBS Remux</b> mode.</li>
+      <li>Choose your <b>input recording</b> (often .mkv).</li>
+      <li>Choose an <b>output folder</b>.</li>
+      <li>Click <b>Convert</b> (remux).</li>
+      <li>Verify the output file plays correctly before deleting your original.</li>
+    </ol>
+    <p><b>Tip:</b> Keep the original MKV as a backup until you verify the remuxed file.</p>
+  </div>
+
+  <div class="card">
+    <h2>Notes</h2>
+    <ul>
+      <li>Remux is not the same as re-encoding—quality should remain the same.</li>
+      <li>If the target container doesn’t support a track/codec, remux may fail.</li>
+      <li>Leonardo prevents overwriting existing files by design.</li>
+    </ul>
+  </div>
+
+  <p><a href="modes.html">← Back to Modes</a> &nbsp;|&nbsp; <a href="index.html">Help Home</a></p>
+</body>
+</html>

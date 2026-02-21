@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" />
+<title>Leonardo 10 - Troubleshooting</title>
+<style>body{font-family:system-ui,sans-serif;margin:24px;line-height:1.5} h2{margin-top:18px} code{background:#f6f6f6;padding:2px 6px;border-radius:6px}</style>
+</head><body>
+<h1>Troubleshooting</h1>
+
+<h2>FFmpeg not found</h2>
+<p>Leonardo requires <b>FFmpeg</b> to run conversions.</p>
+<ul>
+  <li><b>Linux:</b> install via your package manager (example: <code>sudo pacman -S ffmpeg</code>).</li>
+  <li><b>Windows/macOS:</b> if your build does not bundle FFmpeg, install it and ensure <code>ffmpeg</code> is on your PATH.</li>
+</ul>
+
+<h2>“Output file exists” / overwrite prevented</h2>
+<p>Leonardo intentionally prevents overwriting existing files to protect your work. Choose a different output name or folder.</p>
+
+<h2>Conversion fails immediately</h2>
+<ul>
+  <li>Verify input file plays normally.</li>
+  <li>Try a different output folder (permissions issue).</li>
+  <li>Ensure you have free disk space.</li>
+  <li>Check that FFmpeg runs in a terminal: <code>ffmpeg -version</code></li>
+</ul>
+
+<h2>Audio out of sync / playback weird</h2>
+<p>This is usually source-related or container-related. Try the Resolve mode (MP4→MOV) or remux mode if available.</p>
+
+<h2>Where is the config stored?</h2>
+<p>Leonardo stores preferences such as theme, last folder, and last mode in a local configuration file on your system.</p>
+
+<p><a href="index.html">← Back to Help Home</a></p>
+</body></html>

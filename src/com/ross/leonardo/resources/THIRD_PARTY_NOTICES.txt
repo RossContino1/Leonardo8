@@ -1,0 +1,10 @@
+Leonardo 10
+© 2026 Ross Contino
+
+This software uses FFmpeg.
+
+FFmpeg is licensed under the GNU Lesser General Public License (LGPL)
+or GNU General Public License (GPL), depending on build configuration.
+
+For more information:
+https://ffmpeg.org
