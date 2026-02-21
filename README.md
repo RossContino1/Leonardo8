@@ -34,13 +34,20 @@ sudo dnf install ffmpeg
 
 [![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue?style=for-the-badge)](https://bytesbreadbbq.com/leonardo/)
 
+## Donations
+
+---
+
+## ☕ Support Leonardo
+
+Leonardo is free to use. If it saves you time (or brisket), consider supporting development:
+
+[![Support via PayPal](https://img.shields.io/badge/Support-PayPal-blue?style=for-the-badge&logo=paypal)](https://www.paypal.com/donate/?hosted_button_id=XS9MXN5AE5P3S)
+
+Your support helps keep the code crispy and the files smokin’ hot.
+
+
 ## License
 
 This project is licensed under the MIT License.
 
-## Donations
-
-If you find Leonardo useful and would like to support development:
-[Your PayPal Link Here]
-
-Leonardo is free and open source software.
