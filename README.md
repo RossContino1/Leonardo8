@@ -30,6 +30,20 @@ sudo apt install ffmpeg
 **Fedora:**
 sudo dnf install ffmpeg
 
+## Leonardo 10.0.12
+
+- Java/Eclipse rewrite of Leonardo
+- Packaged as AppImage for Linux
+- Improved FFmpeg integration
+- Fixed GNOME icon issues
+- Added GitHub link in menu
+- Updated help system
+
+Download the AppImage below.
+
+Remember — at Bytes, Bread, and Barbecue we keep your code crispy and your files smokin’ hot.
+
+
 ## Linux (AppImage)
 
 1. Download the AppImage
